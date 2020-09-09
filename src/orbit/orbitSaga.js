@@ -31,7 +31,7 @@ export function * addOrbitIdentityProvider(identityProvider) {
         yield put({ type: ORBIT_IDENTITY_PROVIDER_ADDED });
     } catch (error) {
         yield put({ type: ORBIT_IDENTITY_PROVIDER_FAILED, error });
-        console.error(LOGGING_PREFIX + 'EthereumIdentityProvider adding error:');
+        console.error(LOGGING_PREFIX + 'IdentityProvider adding error:');
         console.error(error);
     }
 }
@@ -72,7 +72,7 @@ export function * createDatabase({orbit, db}) {
 
         const createdDB = yield call([orbit, dbTypeFun], db.name);
 
-        yield put({ type: ORBIT_DATABASE_CREATED, database: createdDB });
+        yield put({ type: ORBIT_DATABASE_CREATED, database: createdDB, timestamp: +new Date });
 
         // Wait for event channel setup before loading
         yield take(action => action.type === ORBIT_DATABASE_LISTEN && action.id === createdDB.id);
@@ -82,7 +82,7 @@ export function * createDatabase({orbit, db}) {
         return createdDB;
     } catch (error) {
         yield put({ type: ORBIT_DATABASE_FAILED, error });
-        console.error(LOGGING_PREFIX + 'OrbitDB identity provider adding error:');
+        console.error(LOGGING_PREFIX + 'OrbitDB database creation error:');
         console.error(error);
     }
 }

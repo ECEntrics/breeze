@@ -3,6 +3,7 @@ import {
     ORBIT_DATABASE_READY,
     ORBIT_DATABASE_REPLICATED,
     ORBIT_DATABASE_REPLICATING,
+    ORBIT_INIT_FAILED,
     ORBIT_INITIALIZED
 } from "./orbitActions";
 import {
@@ -24,6 +25,11 @@ const orbitReducer = (state = initialState, action) => {
                 ...state,
                 initialized: true,
             };
+        case ORBIT_INIT_FAILED:
+            return {
+                ...state,
+                failed: true,
+            };
         case ORBIT_DATABASE_CREATED:
             return newDatabasesStatus(state, action, DB_STATUS_INIT);
         case ORBIT_DATABASE_READY:
@@ -44,7 +50,8 @@ function newDatabasesStatus (state, action, status) {
             ...state.databases,
             [action.database.id]: {
                 ...state[action.database.id],
-                status
+                status,
+                timestamp: action.timestamp
             }
         }
     }

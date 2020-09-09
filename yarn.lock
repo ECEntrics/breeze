@@ -15,9 +15,9 @@
     regenerator-runtime "^0.13.4"
 
 "@ethersproject/abi@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@ethersproject/abi/-/abi-5.0.3.tgz#27280ff9d44b94b5ac83064db81deb8d1b87dab1"
-  integrity sha512-fSSs4sgaf5R1955QSpYXW2YkrYBgyOSyENyyMEyJwxTsKJKQPaReTQXafyeRc8ZLi3/2uzeqakH09r0S1hlFng==
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@ethersproject/abi/-/abi-5.0.4.tgz#92d603307ad343f9465d5e0f546df3cf72709862"
+  integrity sha512-T8woaIQHCJMZDAQim1vSp8ycsP2h1/TlnBHzQqR9atKknoqLiT26Wxr9AkhW1aufexkWrZTHbf2837469uS6Eg==
   dependencies:
     "@ethersproject/address" "^5.0.3"
     "@ethersproject/bignumber" "^5.0.6"
@@ -201,13 +201,14 @@
     "@ethersproject/logger" "^5.0.5"
 
 "@ethersproject/providers@^5.0.6":
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.0.6.tgz#caad9a9181e4792549850af18cbbe390e42c86a7"
-  integrity sha512-hY1mFtZvbzqckPxwyR989ujr+cEzsQQdx+DDkNI6E5wF8GiTETAUMl3SmxPzcPebSD++ZI4vKtYdcabsJF0yaA==
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/@ethersproject/providers/-/providers-5.0.7.tgz#8dfb9eacb36d3c05c08831f71ad43fb46d2aaec6"
+  integrity sha512-lT+w/w2PKX9oyddX0DTBYl2CVHJTJONZP5HLJ3MzVvSA5dTOdiJ9Sx5rpqR7Tw+mxVA9xPjanoNCaPPIT7cykQ==
   dependencies:
     "@ethersproject/abstract-provider" "^5.0.3"
     "@ethersproject/abstract-signer" "^5.0.3"
     "@ethersproject/address" "^5.0.3"
+    "@ethersproject/basex" "^5.0.3"
     "@ethersproject/bignumber" "^5.0.6"
     "@ethersproject/bytes" "^5.0.4"
     "@ethersproject/constants" "^5.0.3"
@@ -217,9 +218,11 @@
     "@ethersproject/properties" "^5.0.3"
     "@ethersproject/random" "^5.0.3"
     "@ethersproject/rlp" "^5.0.3"
+    "@ethersproject/sha2" "^5.0.3"
     "@ethersproject/strings" "^5.0.3"
     "@ethersproject/transactions" "^5.0.3"
     "@ethersproject/web" "^5.0.4"
+    bech32 "1.1.4"
     ws "7.2.3"
 
 "@ethersproject/random@^5.0.3":
@@ -278,9 +281,9 @@
     "@ethersproject/logger" "^5.0.5"
 
 "@ethersproject/transactions@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@ethersproject/transactions/-/transactions-5.0.3.tgz#7cd82fa6d63043fb5cd561a8ed72df046a968430"
-  integrity sha512-cqsAAFUQV6iWqfgLL7KCPNfd3pXJPDdYtE6QuBEAIpc7cgbJ7TIDCF/dN+1otfERHJIbjGSNrhh4axKRnSFswg==
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@ethersproject/transactions/-/transactions-5.0.4.tgz#76d7afdb0667efde22b054de3a8dc5b440eb6cd2"
+  integrity sha512-QvS5CzxmL46D9Y3OlddurYgEIi5mb0eAgrKm5pM074Uz/1qxCYr+Ah12I4hpaciZtCq4Fe12YWZqUFb1vGcH6Q==
   dependencies:
     "@ethersproject/address" "^5.0.3"
     "@ethersproject/bignumber" "^5.0.6"
@@ -323,9 +326,9 @@
     "@ethersproject/wordlists" "^5.0.3"
 
 "@ethersproject/web@^5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@ethersproject/web/-/web-5.0.4.tgz#75ff66ae8196934aa2a4a62448163fa6be971b2f"
-  integrity sha512-1ZSbFGJo61huhDW5M8hqjP8zoCK6zZlu3jYAJrFKVNgBjEm1UYMY5fsoogYHWkLgCgBIf+M6yKzYdtAs4tol4Q==
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@ethersproject/web/-/web-5.0.5.tgz#dd0531bf2fbf44c37ce8b547e40c183cf88c3e09"
+  integrity sha512-3lffVNOKv/ypW42eY0xhc+UXF+lFUgP1QfIZhWDTJ4xSY6tuNayXKXYq+AqjLXwxwIHzD0TOpe4j46IXJx2NXA==
   dependencies:
     "@ethersproject/base64" "^5.0.3"
     "@ethersproject/bytes" "^5.0.4"
@@ -546,9 +549,9 @@
     "@hapi/validate" "1.x.x"
 
 "@hapi/shot@^5.0.1":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@hapi/shot/-/shot-5.0.3.tgz#bc54913ee112dd4a30311d813c2a28cab28a69c9"
-  integrity sha512-qbccs8KL4YSL9x0J/17Z6Udmtrrn32ieGbrCW8iivl2ha8YzlDy9Wvv1pFKh3mzbTsomWHGLF3UsKcQFk/BqPg==
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@hapi/shot/-/shot-5.0.4.tgz#6c978314f21a054c041f4becc50095dd78d3d775"
+  integrity sha512-PcEz0WJgFDA3xNSMeONgQmothFr7jhbbRRSAKaDh7chN7zOXBlhl13bvKZW6CMb2xVfJUmt34CW3e/oExMgBhQ==
   dependencies:
     "@hapi/hoek" "9.x.x"
     "@hapi/validate" "1.x.x"
@@ -808,9 +811,9 @@
   integrity sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
 
 "@types/node@*":
-  version "14.6.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.2.tgz#264b44c5a28dfa80198fc2f7b6d3c8a054b9491f"
-  integrity sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
+  version "14.6.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.4.tgz#a145cc0bb14ef9c4777361b7bbafa5cf8e3acb5a"
+  integrity sha512-Wk7nG1JSaMfMpoMJDKUsWYugliB2Vy55pdjLpmLixeyMi7HizW2I/9QoxsPCkXl3dO+ZOVqPumKaDUv5zJu2uQ==
 
 "@types/node@10.12.18":
   version "10.12.18"
@@ -818,9 +821,9 @@
   integrity sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ==
 
 "@types/node@^13.7.0":
-  version "13.13.16"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.16.tgz#66f2177047b61131eaac18c47eb25d6f1317070a"
-  integrity sha512-dJ9vXxJ8MEwzNn4GkoAGauejhXoKuJyYKegsA6Af25ZpEDXomeVXt5HUWUNVHk5UN7+U0f6ghC6otwt+7PdSDg==
+  version "13.13.17"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.13.17.tgz#fba8bdd9be9a61adbceac654450673c2f520b0f0"
+  integrity sha512-rGZftvdDpsYtG/rOlDOwny1f6Aq4FHJdGSVfPg5vC2DaR9Rt4W2OpsOF5GTU2bSqZmwTkfnsvJhhzpMWYxxlEA==
 
 "@types/pbkdf2@^3.0.0":
   version "3.1.0"
@@ -1128,7 +1131,7 @@ bcrypto@^5.2.0:
     bufio "~1.0.7"
     loady "~0.0.5"
 
-bech32@^1.1.2:
+bech32@1.1.4, bech32@^1.1.2:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/bech32/-/bech32-1.1.4.tgz#e38c9f37bf179b8eb16ae3a772b40c356d4832e9"
   integrity sha512-s0IrSOzLlbvX7yp4WBfPITzpAU8sqQcpsmwXDiKwrG4r491vwCO/XpejasRNl0piBMe/DvP4Tz0mIS/X1DPJBQ==
@@ -1374,7 +1377,7 @@ buffer-xor@^1.0.3:
   resolved "https://registry.yarnpkg.com/buffer-xor/-/buffer-xor-1.0.3.tgz#26e61ed1422fb70dd42e6e36729ed51d855fe8d9"
   integrity sha1-JuYe0UIvtw3ULm42cp7VHYVf6Nk=
 
-buffer@^5.2.1, buffer@^5.4.3, buffer@^5.5.0, buffer@^5.6.0:
+buffer@^5.4.3, buffer@^5.5.0, buffer@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.6.0.tgz#a31749dc7d81d84db08abf937b6b8c4033f62786"
   integrity sha512-/gDYp/UtU0eA1ys8bOs9J6a+E/KWIY+DZ+Q2WESNUA0jFRsJOc0SNUO6xJ5SGA1xueg3NL65W6s+NY5l9cunuw==
@@ -1503,17 +1506,6 @@ cid-tool@^1.0.0:
     uint8arrays "^1.1.0"
     yargs "^15.0.2"
 
-cids@^0.7.1:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/cids/-/cids-0.7.5.tgz#60a08138a99bfb69b6be4ceb63bfef7a396b28b2"
-  integrity sha512-zT7mPeghoWAu+ppn8+BS1tQ5qGmbMfB4AregnQjA/qHY3GC1m1ptI9GkWNlgeu38r7CuRdXB47uY2XgAYt6QVA==
-  dependencies:
-    buffer "^5.5.0"
-    class-is "^1.1.0"
-    multibase "~0.6.0"
-    multicodec "^1.0.0"
-    multihashes "~0.4.15"
-
 cids@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cids/-/cids-1.0.0.tgz#5a148c4adbf3c56c45bbcf9000451907dfe8b5b2"
@@ -1524,17 +1516,6 @@ cids@^1.0.0:
     multicodec "^2.0.0"
     multihashes "^3.0.1"
     uint8arrays "^1.0.0"
-
-cids@~0.8.0:
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/cids/-/cids-0.8.3.tgz#aaf48ac8ed857c3d37dad94d8db1d8c9407b92db"
-  integrity sha512-yoXTbV3llpm+EBGWKeL9xKtksPE/s6DPoDSY4fn8I8TEW1zehWXPSB0pwAXVDlLaOlrw+sNynj995uD9abmPhA==
-  dependencies:
-    buffer "^5.6.0"
-    class-is "^1.1.0"
-    multibase "^1.0.0"
-    multicodec "^1.0.1"
-    multihashes "^1.0.1"
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
@@ -1966,9 +1947,9 @@ dns-packet@^4.0.0:
     safe-buffer "^5.1.1"
 
 dot-prop@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.2.0.tgz#c34ecc29556dc45f1f4c22697b6f4904e0cc4fcb"
-  integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.3.0.tgz#90ccce708cd9cd82cc4dc8c3ddd9abdd55b20e88"
+  integrity sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
   dependencies:
     is-obj "^2.0.0"
 
@@ -2077,11 +2058,6 @@ engine.io@~3.4.0:
     engine.io-parser "~2.2.0"
     ws "^7.1.2"
 
-err-code@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/err-code/-/err-code-1.1.2.tgz#06e0116d3028f6aef4806849eb0ea6a748ae6960"
-  integrity sha1-BuARbTAo9q70gGhJ6w6mp0iuaWA=
-
 err-code@^2.0.0, err-code@^2.0.1, err-code@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/err-code/-/err-code-2.0.3.tgz#23c2f3b756ffdfc608d30e27c9a941024807e7f9"
@@ -2185,9 +2161,9 @@ ethereumjs-util@^6.0.0:
     rlp "^2.2.3"
 
 ethers@^5.0.8:
-  version "5.0.9"
-  resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.0.9.tgz#ce77cc0fc5b83c57c607e4fd79edcd9bc46dc511"
-  integrity sha512-jv2ULxAKRlJv0zrhpUvYcwwITFghoJOEhOqSJhLBT3TnZyF/lmAS3tC8nejIlwxzOJw7LCyde8U+BwTzZdFDrQ==
+  version "5.0.12"
+  resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.0.12.tgz#8986cf53a425d1a00af6bda886e9098b0448d1fb"
+  integrity sha512-mgF1ZLd1y5r+hS1IPATKwKx5k/PCSqz4PEQjMR+er+Hhu6IefVVcoYATUMjmK4FG+3PAkorRMA9rJ4Y/fdW0UA==
   dependencies:
     "@ethersproject/abi" "^5.0.3"
     "@ethersproject/abstract-provider" "^5.0.3"
@@ -2812,19 +2788,19 @@ ipfs-http-response@^0.6.0:
     multihashes "^3.0.1"
     p-try-each "^1.0.1"
 
-ipfs-log@~4.6.2:
-  version "4.6.2"
-  resolved "https://registry.yarnpkg.com/ipfs-log/-/ipfs-log-4.6.2.tgz#3c4d3f267701b86364e12d4affa34fe6bb480385"
-  integrity sha512-jfSY1IpxEFWOlqSc4YLtSMHCUxNxtEgk9vyT25fFKFlnP+2LMX4oDIAxQ80pMEbEWE9YEWvP8ijH7PLVVlfi9Q==
+ipfs-log@~4.6.4:
+  version "4.6.4"
+  resolved "https://registry.yarnpkg.com/ipfs-log/-/ipfs-log-4.6.4.tgz#a55821422aba4de5f9b29d4abb764df70c0230c3"
+  integrity sha512-dleG9/rIH2yKVvSbhEzSERHwpsE12V8BiMzc4mXhjMGbaf6mn1T1cu+dEKCmC2Om/7v//5gthGsI/vukgwIh0g==
   dependencies:
     json-stringify-deterministic "^1.0.1"
-    multihashing-async "^0.7.0"
-    orbit-db-identity-provider "~0.3.0"
-    orbit-db-io "~0.2.0"
+    multihashing-async "^2.0.1"
+    orbit-db-identity-provider "~0.3.1"
+    orbit-db-io "~0.3.0"
     p-do-whilst "^1.1.0"
     p-each-series "^2.1.0"
-    p-map "^1.1.1"
-    p-whilst "^1.0.0"
+    p-map "^4.0.0"
+    p-whilst "^2.1.0"
 
 ipfs-pubsub-1on1@~0.0.6:
   version "0.0.6"
@@ -3116,19 +3092,6 @@ ipld-dag-cbor@^0.17.0:
     multihashing-async "^2.0.0"
     uint8arrays "^1.0.0"
 
-ipld-dag-pb@^0.18.1:
-  version "0.18.5"
-  resolved "https://registry.yarnpkg.com/ipld-dag-pb/-/ipld-dag-pb-0.18.5.tgz#29e736dcdab10a4dffbef9dec27723e2e56be962"
-  integrity sha512-8IAPZrkRjgTpkxV9JOwXSBe0GXNxd4B2lubPgbifTGL92rZOEKWutpijsWsWvjXOltDFHKMQIIIhkgLC5RPqbA==
-  dependencies:
-    buffer "^5.6.0"
-    cids "~0.8.0"
-    class-is "^1.1.0"
-    multicodec "^1.0.1"
-    multihashing-async "~0.8.1"
-    protons "^1.0.2"
-    stable "^0.1.8"
-
 ipld-dag-pb@^0.20.0:
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/ipld-dag-pb/-/ipld-dag-pb-0.20.0.tgz#025c0343aafe6cb9db395dd1dc93c8c60a669360"
@@ -3413,9 +3376,9 @@ it-buffer@^0.1.1, it-buffer@^0.1.2:
     buffer "^5.5.0"
 
 it-concat@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/it-concat/-/it-concat-1.0.0.tgz#26df98dcaea89aa775cce4d082c15fdf527a8bd0"
-  integrity sha512-mLhiCB3tW4NTYTg7bMlyYX2c782KsAacthHMR3y5kjJn9JhNFb02NcH70KZuNrSXFSTq8k6m8MiYaQWRjrDxAA==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/it-concat/-/it-concat-1.0.1.tgz#4ac61c1b0a2185c97e1bd004d45f625902f7d728"
+  integrity sha512-ca7tnIqSpPycty9K+x08OwFj9kLSrsXgENn7ry2mNXlFlUkgEZe1/xvBjwnUlUEHvnITMj4Mq7ozPm1VaOm8FQ==
   dependencies:
     bl "^4.0.0"
 
@@ -4680,14 +4643,6 @@ multibase@^0.7.0:
     base-x "^3.0.8"
     buffer "^5.5.0"
 
-multibase@^1.0.0, multibase@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/multibase/-/multibase-1.0.1.tgz#4adbe1de0be8a1ab0274328b653c3f1903476724"
-  integrity sha512-KcCxpBVY8fdVKu4dJMAahq4F/2Z/9xqEjIiR7PiMe7LRGeorFn2NLmicN6nLBCqQvft6MG2Lc9X5P0IdyvnxEw==
-  dependencies:
-    base-x "^3.0.8"
-    buffer "^5.5.0"
-
 multibase@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/multibase/-/multibase-3.0.0.tgz#f56eb828ee5c00241fe860ed5e2d144c8b9821f4"
@@ -4695,14 +4650,6 @@ multibase@^3.0.0:
   dependencies:
     base-x "^3.0.8"
     web-encoding "^1.0.2"
-
-multibase@~0.6.0:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/multibase/-/multibase-0.6.1.tgz#b76df6298536cc17b9f6a6db53ec88f85f8cc12b"
-  integrity sha512-pFfAwyTjbbQgNc3G7D48JkJxWtoJoBMaR4xQUOuB8RnCgRqaYmWNFeJTTvrJ2w51bjLq2zTby6Rqj9TQ9elSUw==
-  dependencies:
-    base-x "^3.0.8"
-    buffer "^5.5.0"
 
 multicast-dns@^7.2.0:
   version "7.2.2"
@@ -4712,29 +4659,12 @@ multicast-dns@^7.2.0:
     dns-packet "^4.0.0"
     thunky "^1.0.2"
 
-multicodec@^1.0.0, multicodec@^1.0.1:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/multicodec/-/multicodec-1.0.4.tgz#46ac064657c40380c28367c90304d8ed175a714f"
-  integrity sha512-NDd7FeS3QamVtbgfvu5h7fd1IlbaC4EQ0/pgU4zqE2vdHCmBGsUa0TiM8/TdSeG6BMPC92OOCf8F1ocE/Wkrrg==
-  dependencies:
-    buffer "^5.6.0"
-    varint "^5.0.0"
-
 multicodec@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/multicodec/-/multicodec-2.0.0.tgz#e0c41d99ce29d5f92a9406a6a31169a3802a1ca3"
-  integrity sha512-2SLsdTCXqOpUfoSHkTaVzxnjjl5fsSO283Idb9rAYgKGVu188NFP5KncuZ8Ifg8H2gc5GOi2rkuhLumqv9nweQ==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/multicodec/-/multicodec-2.0.1.tgz#0971bbef83fcb354315c837c9a3f3e2e422af371"
+  integrity sha512-YDYeWn9iGa76hOHAyyZa0kbt3tr5FLg1ZXUHrZUJltjnxxdbTIbHnxWLd2zTcMOjdT3QyO+Xs4bQgJUcC2RWUA==
   dependencies:
     uint8arrays "1.0.0"
-    varint "^5.0.0"
-
-multihashes@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/multihashes/-/multihashes-1.0.1.tgz#a89415d68283cf6287c6e219e304e75ce7fb73fe"
-  integrity sha512-S27Tepg4i8atNiFaU5ZOm3+gl3KQlUanLs/jWcBxQHFttgq+5x1OgbQmf2d8axJ/48zYGBd/wT9d723USMFduw==
-  dependencies:
-    buffer "^5.6.0"
-    multibase "^1.0.1"
     varint "^5.0.0"
 
 multihashes@^3.0.0, multihashes@^3.0.1, multihashes@~3.0.1:
@@ -4746,7 +4676,7 @@ multihashes@^3.0.0, multihashes@^3.0.1, multihashes@~3.0.1:
     uint8arrays "^1.0.0"
     varint "^5.0.0"
 
-multihashes@~0.4.13, multihashes@~0.4.14, multihashes@~0.4.15:
+multihashes@~0.4.13, multihashes@~0.4.14:
   version "0.4.21"
   resolved "https://registry.yarnpkg.com/multihashes/-/multihashes-0.4.21.tgz#dc02d525579f334a7909ade8a122dabb58ccfcb5"
   integrity sha512-uVSvmeCWf36pU2nB4/1kzYZjsXD9vofZKpgudqkceYY5g2aZZXJ5r9lxuzoRLl1OAp28XljXsEJ/X/85ZsKmKw==
@@ -4754,18 +4684,6 @@ multihashes@~0.4.13, multihashes@~0.4.14, multihashes@~0.4.15:
     buffer "^5.5.0"
     multibase "^0.7.0"
     varint "^5.0.0"
-
-multihashing-async@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/multihashing-async/-/multihashing-async-0.7.0.tgz#3234fb98295be84386b85bfd20377d3e5be20d6b"
-  integrity sha512-SCbfl3f+DzJh+/5piukga9ofIOxwfT05t8R4jfzZIJ88YE9zU9+l3K2X+XB19MYyxqvyK9UJRNWbmQpZqQlbRA==
-  dependencies:
-    blakejs "^1.1.0"
-    buffer "^5.2.1"
-    err-code "^1.1.2"
-    js-sha3 "~0.8.0"
-    multihashes "~0.4.13"
-    murmurhash3js-revisited "^3.0.0"
 
 multihashing-async@^2.0.0, multihashing-async@^2.0.1:
   version "2.0.1"
@@ -4800,18 +4718,6 @@ multihashing-async@~0.6.0:
     multihashes "~0.4.13"
     murmurhash3js "^3.0.1"
     nodeify "^1.0.1"
-
-multihashing-async@~0.8.1:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/multihashing-async/-/multihashing-async-0.8.2.tgz#3d5da05df27d83be923f6d04143a0954ff87f27f"
-  integrity sha512-2lKa1autuCy8x7KIEj9aVNbAb3aIMRFYIwN7mq/zD4pxgNIVgGlm+f6GKY4880EOF2Y3GktHYssRy7TAJQ2DyQ==
-  dependencies:
-    blakejs "^1.1.0"
-    buffer "^5.4.3"
-    err-code "^2.0.0"
-    js-sha3 "^0.8.0"
-    multihashes "^1.0.1"
-    murmurhash3js-revisited "^3.0.0"
 
 multihashing@~0.3.3:
   version "0.3.3"
@@ -4879,9 +4785,9 @@ napi-macros@~2.0.0:
   integrity sha512-A0xLykHtARfueITVDernsAWdtIMbOJgKgcluwENp3AlsKN/PloyO10HtmoqnFAQAcxPkgZN7wdfPfEd0zNGxbg==
 
 needle@^2.2.1:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-2.5.0.tgz#e6fc4b3cc6c25caed7554bd613a5cf0bac8c31c0"
-  integrity sha512-o/qITSDR0JCyCKEQ1/1bnUXMmznxabbwi/Y4WwJElf+evwJNFNwIDMCCt5IigFVxgeGBJESLohGtIS9gEzo1fA==
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/needle/-/needle-2.5.2.tgz#cf1a8fce382b5a280108bba90a14993c00e4010a"
+  integrity sha512-LbRIwS9BfkPvNwNHlsA41Q29kL2L/6VaOJ0qisM5lLWsTV3nP15abO5ITL6L81zqFhzjRKDAYjpcBcwM0AVvLQ==
   dependencies:
     debug "^3.2.6"
     iconv-lite "^0.4.4"
@@ -4909,14 +4815,14 @@ node-addon-api@^2.0.0:
   integrity sha512-Ntyt4AIXyaLIuMHF6IOoTakB3K+RWxwtsHNRxllEoA6vPwP9o4866g6YWDLUdnucilZhmkxiHwHr11gAENw+QA==
 
 node-fetch@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
-  integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
 node-forge@^0.9.1, node-forge@~0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.1.tgz#775368e6846558ab6676858a4d8c6e8d16c677b5"
-  integrity sha512-G6RlQt5Sb4GMBzXvhfkeFmbqR6MzhtnT7VTHuLadjkii3rdYHNdw0m8zA4BTxVIh68FicCQ2NSUANpsqkr9jvQ==
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.2.tgz#b35a44c28889b2ea55cabf8c79e3563f9676190a"
+  integrity sha512-naKSScof4Wn+aoHU6HBsifh92Zeicm1GDQKd1vp3Y/kOi8ub0DozCa9KpvYNCXslFHYRmLNiqRopGdTGwNLpNw==
 
 node-gyp-build@^4.2.0:
   version "4.2.3"
@@ -5074,12 +4980,12 @@ optional@^0.1.3:
   resolved "https://registry.yarnpkg.com/optional/-/optional-0.1.4.tgz#cdb1a9bedc737d2025f690ceeb50e049444fd5b3"
   integrity sha512-gtvrrCfkE08wKcgXaVwQVgwEQ8vel2dc5DDBn9RLQZ3YtmtkBss6A2HY6BnJH4N/4Ku97Ri/SF8sNWE2225WJw==
 
-orbit-db-access-controllers@^0.2.2:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/orbit-db-access-controllers/-/orbit-db-access-controllers-0.2.5.tgz#8fd37666f1595c56ba4ae32744b61614fffb69e3"
-  integrity sha512-wMwRv3MquukJPkAsuybbsn6rwXOol92fE+fIcA4QYTIpGQZWgCes2IIrilHGEFUNLxpkocRqWTy1GfPl//Zosw==
+orbit-db-access-controllers@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-access-controllers/-/orbit-db-access-controllers-0.3.0.tgz#48814ab2965a73a0d0d218b56be93318c478a0fb"
+  integrity sha512-H7xfgpcyAx9ToFYMvpP7StCt269uaqM33lnMdY9T1o3gbP8IYe0wPurkPQwg6IVZHrDeeBvTDA7kbOqShf9vJw==
   dependencies:
-    orbit-db-io "^0.2.0"
+    orbit-db-io "^0.3.0"
     p-map-series "^1.0.0"
 
 orbit-db-cache@~0.3.0:
@@ -5089,37 +4995,37 @@ orbit-db-cache@~0.3.0:
   dependencies:
     logplease "~1.2.15"
 
-orbit-db-counterstore@~1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/orbit-db-counterstore/-/orbit-db-counterstore-1.9.0.tgz#9ce630660db06968d84bf196ddb6961a527485fb"
-  integrity sha512-Z0qODsN3Lorj4Oe7JXb8hEDBjxttQvvQMEGxTyMrRgL/leL1BSss0qr8Vdklwxulu3mfXE7mvXRFDOdZGF1kVg==
+orbit-db-counterstore@~1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-counterstore/-/orbit-db-counterstore-1.10.0.tgz#ebb3234717545e991b945333652dcb20008c6946"
+  integrity sha512-t79lYDX+w+YQADNEHVlgqkCsRm1TLZz98bW45ttTsazY3m6xvN+MfSysFV0xvMq2hPkFYOnp/LFY1XMetLnmcA==
   dependencies:
     crdts "~0.1.2"
-    orbit-db-store "~3.3.0"
+    orbit-db-store "~3.4.0"
 
-orbit-db-docstore@~1.9.0:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/orbit-db-docstore/-/orbit-db-docstore-1.9.1.tgz#55462724154f4b63ceae2e3c14e4583defaca4a6"
-  integrity sha512-ORnro7C5+n6lnkvZdQ9xMHLoiEC8I0DlRGkR6PSTW64JcjH9qbuSDUBdaqb0a6Ay3CREN7u84z4xyzRK8XvShg==
+orbit-db-docstore@~1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-docstore/-/orbit-db-docstore-1.10.0.tgz#0327f1c0a0336ddfa0d12f9f8cef14346058d56d"
+  integrity sha512-QVSPTFQsh6AM7akHsul3YJ+bJolX4DeYNHO6lEnMystX/+vRoGjFKRNTrhFZjLcLyX5Y4Rt2cU68DaG1PhPvtg==
   dependencies:
-    orbit-db-store "~3.3.0"
+    orbit-db-store "~3.4.0"
     p-map "~1.1.1"
 
-orbit-db-eventstore@~1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/orbit-db-eventstore/-/orbit-db-eventstore-1.9.0.tgz#b696c831dca85db53990a325235f7b6c57e3f078"
-  integrity sha512-KoRa1JUnUWjCCEZgc+1PhW4OeFaegEh6ySjPhsQhz4hdMCD3komqakrToEBeKzxLXjL4Oy+/YNhtZiqo9r+o+w==
+orbit-db-eventstore@~1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-eventstore/-/orbit-db-eventstore-1.10.0.tgz#681dc0d221229d394dd27e3903d6790351444a1e"
+  integrity sha512-1BgIMSgZuuaUnYRQbUv9/5ykw/daRQFW63/OYRl2f2GYfRiFx0QwGiTVSUeb7sMv0RX57nXgOLXpgEUBI7OBMw==
   dependencies:
-    orbit-db-store "~3.3.0"
+    orbit-db-store "~3.4.0"
 
-orbit-db-feedstore@~1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/orbit-db-feedstore/-/orbit-db-feedstore-1.9.0.tgz#c587b58b56dd05a24713f9aab0d98c75e3d8ad1b"
-  integrity sha512-WB9zJIDv+kYq2r2LNYueHKXJ3w+1RnG9ksHQ1zyAxqdsgJGHHsnwRDErYjnoaLLHKLB2D/n/zW0LPAbNcalswA==
+orbit-db-feedstore@~1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-feedstore/-/orbit-db-feedstore-1.10.0.tgz#c6a515b1aa7446b4649e609cc889ed4cc7e88ab6"
+  integrity sha512-0Z8aYjJuyz1m0MSn/9d1Nh97q1hvonvi04+oTcr58indSzz+vf2g93ElKC2QgV5grxuGisJAbikxyslSzIcaAg==
   dependencies:
-    orbit-db-eventstore "~1.9.0"
+    orbit-db-eventstore "~1.10.0"
 
-orbit-db-identity-provider@0.3.1, orbit-db-identity-provider@~0.3.0:
+orbit-db-identity-provider@0.3.1, orbit-db-identity-provider@~0.3.0, orbit-db-identity-provider@~0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/orbit-db-identity-provider/-/orbit-db-identity-provider-0.3.1.tgz#ed2eaccf14981fd105984644052bb28e32b2fa20"
   integrity sha512-kR6uUCovNecTTPTDsCkm07VEEg1nozx5bz0/ZUO7Oo+0EhCACPO9DZ3g5Wy9bPBHyaaRYqcocQfqAvTdfwyWLQ==
@@ -5127,13 +5033,13 @@ orbit-db-identity-provider@0.3.1, orbit-db-identity-provider@~0.3.0:
     ethers "^5.0.8"
     orbit-db-keystore "~0.3.5"
 
-orbit-db-io@^0.2.0, orbit-db-io@~0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/orbit-db-io/-/orbit-db-io-0.2.0.tgz#53be6e4067c02e2fbff9d371aedeb6da8dbb89ee"
-  integrity sha512-wOunD4ZRgtTsAXJEu9NNEeJ8s98tZTtFlrLiI/ThuDKBy4AwpIvr+vMkzMD0DMSUTurRtK+xz7AfkP0nd9bcxQ==
+orbit-db-io@^0.3.0, orbit-db-io@~0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-io/-/orbit-db-io-0.3.0.tgz#cbc84c629431ea63a2c32d73f4638c8c92ebc444"
+  integrity sha512-yWyhDR9vqw2+8tuOT+erKWkc9cL2QuemSVZgPjEm7nn+zkBzbacbfUdbgKtbtgUp8VDKhCzph2LfEEVhs6F5HA==
   dependencies:
-    cids "^0.7.1"
-    ipld-dag-pb "^0.18.1"
+    cids "^1.0.0"
+    ipld-dag-pb "^0.20.0"
 
 orbit-db-keystore@~0.3.0, orbit-db-keystore@~0.3.5:
   version "0.3.5"
@@ -5150,17 +5056,17 @@ orbit-db-keystore@~0.3.0, orbit-db-keystore@~0.3.5:
     mkdirp "^0.5.5"
     safe-buffer "^5.2.1"
 
-orbit-db-kvstore@~1.9.0:
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/orbit-db-kvstore/-/orbit-db-kvstore-1.9.0.tgz#0fdedb1a0b1659ba5d3833f2853ea2eb61187b7d"
-  integrity sha512-KKSlqbJ3OwoRAAdcuwgOfHR6vduB4XIfXpPzH9F2ZwOReA/gY9q0ysN7+c0QshXO64UNLD7l2wYLJsAAs4Pckw==
+orbit-db-kvstore@~1.10.0:
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-kvstore/-/orbit-db-kvstore-1.10.0.tgz#288659cb091129c086087e48a0d57b19dd605cfc"
+  integrity sha512-F9BZRq60x43TpbJdGseaut/sbNQV2kT1MIeyC49t+cnLrzVlRkBQp6nPQwgSOLIvKJiNWn3YS3GJTsvbUEfgTQ==
   dependencies:
-    orbit-db-store "~3.3.0"
+    orbit-db-store "~3.4.0"
 
-orbit-db-pubsub@~0.5.5:
-  version "0.5.7"
-  resolved "https://registry.yarnpkg.com/orbit-db-pubsub/-/orbit-db-pubsub-0.5.7.tgz#dc1722d75d628ff47fe3f0b374ca885e49f64997"
-  integrity sha512-NVB1iTsohVs0juIxtPS72ijJDs5Gx/v/RFi1G3z8DJ5Aplyaonfa8KghApUDW9Gd3k3NVKifPyZHEN1nHQDRPA==
+orbit-db-pubsub@~0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-pubsub/-/orbit-db-pubsub-0.6.0.tgz#31cbf193e94da8bab74a649671d9c8f0956483d1"
+  integrity sha512-+hQoeev6rl0S4805KDHVz7tU3zUk97a8udCH8LLtKG0Lh1xjc+qCIk5Pcknu6OjppkECmEz68e2wcYyfEqXufw==
   dependencies:
     ipfs-pubsub-peer-monitor "~0.0.5"
     logplease "~1.2.14"
@@ -5174,24 +5080,24 @@ orbit-db-storage-adapter@~0.5.3:
     level "^5.0.1"
     mkdirp "^0.5.1"
 
-orbit-db-store@~3.3.0, orbit-db-store@~3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/orbit-db-store/-/orbit-db-store-3.3.1.tgz#b91863fd71716ef0d2cb6b6ca92a6837115cfee3"
-  integrity sha512-u9yunvxP3a80n2pX5OyS9yQNbrGLlaYsgw040SWohXM78mu6EMokm7wiQ7MNYnj5zx0SdD/cmU9BTeKSSWu8wA==
+orbit-db-store@~3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/orbit-db-store/-/orbit-db-store-3.4.0.tgz#11dfdfb991d3bc90d6d5f4e9d0b1dfcfb8c11e58"
+  integrity sha512-oUyGNg8eeZcOmAxLvbACqynqbXFd3kCPSlGrIeUqCG/AZbemYDxtc/f9eX2puV+rkqJla/KwHsDcdjc5V4+ZSQ==
   dependencies:
-    ipfs-log "~4.6.2"
+    ipfs-log "~4.6.4"
     it-to-stream "^0.1.2"
     logplease "^1.2.14"
-    orbit-db-io "~0.2.0"
+    orbit-db-io "~0.3.0"
     p-each-series "^2.1.0"
     p-map "^4.0.0"
     p-queue "^6.6.1"
     readable-stream "~3.6.0"
 
-orbit-db@0.25.1:
-  version "0.25.1"
-  resolved "https://registry.yarnpkg.com/orbit-db/-/orbit-db-0.25.1.tgz#b9579338a50858cfe6f824dcefe15381a12fc6eb"
-  integrity sha512-yjn8zce2gPHH59fKOu61X5ocdGIu7eSYmoxrLWd6mvRM9l+q9JLwiuGnpUi1MonucmWJnfuI/Kvn/hBcqPySBg==
+orbit-db@0.26.0-rc1:
+  version "0.26.0-rc1"
+  resolved "https://registry.yarnpkg.com/orbit-db/-/orbit-db-0.26.0-rc1.tgz#0cbb8cab01bd9141faaef1ce1f634acc6d87f521"
+  integrity sha512-5O/I8u14y738yucrJOxd1SDuT6OU/RgPKO6q6ahcCYFs3GEM0lcv8yhVKNFDR4eOpJjlsCFkLGDTsGNbA6wALw==
   dependencies:
     cids "^1.0.0"
     ipfs-pubsub-1on1 "~0.0.6"
@@ -5199,19 +5105,19 @@ orbit-db@0.25.1:
     localstorage-down "^0.6.7"
     logplease "^1.2.14"
     multihashes "~3.0.1"
-    orbit-db-access-controllers "^0.2.2"
+    orbit-db-access-controllers "^0.3.0"
     orbit-db-cache "~0.3.0"
-    orbit-db-counterstore "~1.9.0"
-    orbit-db-docstore "~1.9.0"
-    orbit-db-eventstore "~1.9.0"
-    orbit-db-feedstore "~1.9.0"
+    orbit-db-counterstore "~1.10.0"
+    orbit-db-docstore "~1.10.0"
+    orbit-db-eventstore "~1.10.0"
+    orbit-db-feedstore "~1.10.0"
     orbit-db-identity-provider "~0.3.0"
-    orbit-db-io "~0.2.0"
+    orbit-db-io "~0.3.0"
     orbit-db-keystore "~0.3.0"
-    orbit-db-kvstore "~1.9.0"
-    orbit-db-pubsub "~0.5.5"
+    orbit-db-kvstore "~1.10.0"
+    orbit-db-pubsub "~0.6.0"
     orbit-db-storage-adapter "~0.5.3"
-    orbit-db-store "~3.3.1"
+    orbit-db-store "~3.4.0"
 
 os-homedir@^1.0.0:
   version "1.0.2"
@@ -5310,11 +5216,6 @@ p-map-series@^1.0.0:
   dependencies:
     p-reduce "^1.0.0"
 
-p-map@^1.1.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
-  integrity sha512-r6zKACMNhjPJMTl8KcFH4li//gkrXWfbD6feV8l6doRHlzljFWGJ2AP6iKaCJXyZmAUMOPtvbW7EXkbWO/pLEA==
-
 p-map@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-2.1.0.tgz#310928feef9c9ecc65b68b17693018a665cea175"
@@ -5405,10 +5306,10 @@ p-wait-for@^3.1.0:
   dependencies:
     p-timeout "^3.0.0"
 
-p-whilst@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/p-whilst/-/p-whilst-1.0.0.tgz#54668ead7f934799fc00f1e5230fd6addeb8e7e6"
-  integrity sha1-VGaOrX+TR5n8APHlIw/Wrd645+Y=
+p-whilst@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/p-whilst/-/p-whilst-2.1.0.tgz#d8f3aa3a68f5595ab8b40a62cc3d49d8f9cf082c"
+  integrity sha512-uzp1HPgqzokEmZN+VpfQ9PO4YY5xm+jpLJeL9FN1NPU4d4IZh8eEV+mtQXd+/22R1P7C5j19b7Y//oUc7k0+RQ==
 
 package-json@^6.3.0:
   version "6.5.0"
@@ -5541,9 +5442,9 @@ pino-std-serializers@^2.4.2:
   integrity sha512-wXqbqSrIhE58TdrxxlfLwU9eDhrzppQDvGhBEr1gYbzzM4KKo3Y63gSjiDXRKLVS2UOXdPNR2v+KnQgNrs+xUg==
 
 pino@^6.0.0:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-6.5.1.tgz#a245adf960a1f3e88e61a339045d509bccbfb7cc"
-  integrity sha512-76+RUhQkqjUD4AtQcSfEzh6vlsjXmoWZK5gg+2d70aCLXZTbo4/5js4I9rN1Xk6z1h2/7pnOFX10G4c2T4qNiA==
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-6.6.0.tgz#690ca4a98d027b32f2302c3750eced280fbc8dee"
+  integrity sha512-rLfJXX8i2P1VNXZY05fDMI/qK1IQSpKnOg5iNY5TRJn+vKhc9hBg1iCiAuOw3hKEAf54MZMlT8P6T+wgYQYpIA==
   dependencies:
     fast-redact "^2.0.0"
     fast-safe-stringify "^2.0.7"
@@ -5648,7 +5549,7 @@ protocol-buffers-schema@^3.3.1:
   resolved "https://registry.yarnpkg.com/protocol-buffers-schema/-/protocol-buffers-schema-3.4.0.tgz#2f0ea31ca96627d680bf2fefae7ebfa2b6453eae"
   integrity sha512-G/2kcamPF2S49W5yaMGdIpkG6+5wZF0fzBteLKgEHjbNzqjZQ85aAs1iJGto31EJaSTkNvHs5IXuHSaTLWBAiA==
 
-protons@^1.0.1, protons@^1.0.2:
+protons@^1.0.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/protons/-/protons-1.2.1.tgz#5f1e0db8b2139469cd1c3b4e332a4c2d95d0a218"
   integrity sha512-2oqDyc/SN+tNcJf8XxrXhYL7sQn2/OMl8mSdD7NVGsWjMEmAbks4eDVnCyf0vAoRbBWyWTEXWk4D8XfuKVl3zg==

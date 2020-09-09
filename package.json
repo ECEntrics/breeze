@@ -1,6 +1,6 @@
 {
   "name": "@ezerous/breeze",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A reactive data-store for OrbitDB.",
   "license": "MIT",
   "author": "Ezerous <ezerous@gmail.com>",
@@ -10,7 +10,7 @@
     "deepmerge": "4.2.2",
     "ipfs": "0.50.1",
     "is-plain-object": "4.1.1",
-    "orbit-db": "0.25.1",
+    "orbit-db": "0.26.0-rc1",
     "orbit-db-identity-provider": "0.3.1",
     "redux-saga": "1.1.3"
   }

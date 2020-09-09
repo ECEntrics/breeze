@@ -16,17 +16,17 @@ import {
 function createOrbitDatabaseChannel (database){
     return eventChannel(emit => {
         const onReady = () => {
-            emit({ type: ORBIT_DATABASE_READY, database });
+            emit({ type: ORBIT_DATABASE_READY, database, timestamp: +new Date });
         };
         const onReplicate = () => {
-            emit({ type: ORBIT_DATABASE_REPLICATING, database });
+            emit({ type: ORBIT_DATABASE_REPLICATING, database, timestamp: +new Date });
         };
         const onReplicated = () => {
-            emit({ type: ORBIT_DATABASE_REPLICATED, database });
+            emit({ type: ORBIT_DATABASE_REPLICATED, database, timestamp: +new Date });
         };
 
         const eventListener = database.events
-            .on('ready', onReady)
+            .once('ready', onReady)
             .on('replicate', onReplicate)
             .on('replicated', onReplicated)
 

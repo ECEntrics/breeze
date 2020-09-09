@@ -1,7 +1,7 @@
-import { IPFS_INITIALIZED } from "./ipfsActions";
+import {IPFS_FAILED, IPFS_INITIALIZED} from "./ipfsActions";
 
 const initialState = {
-    initialized: false,
+    initialized: false
 };
 
 const ipfsReducer = (state = initialState, action) => {
@@ -9,7 +9,12 @@ const ipfsReducer = (state = initialState, action) => {
         case IPFS_INITIALIZED:
             return {
                 ...state,
-                initialized: true,
+                initialized: true
+            };
+        case IPFS_FAILED:
+            return {
+                ...state,
+                failed: true
             };
         default:
             return state;
