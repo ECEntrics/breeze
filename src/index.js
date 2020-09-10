@@ -9,7 +9,9 @@ import orbitSaga from "./orbit/orbitSaga";
 import * as BreezeActions from './breezeStatus/breezeActions'
 import * as OrbitActions from './orbit/orbitActions'
 
-import * as orbitTypes from './orbit/constants'
+import * as breezeConstants from './constants'
+
+import * as orbitTypes from './orbit/orbitConstants'
 import orbitMiddleware from "./orbit/orbitMiddleware";
 import orbitStatusSaga from "./orbit/orbitStatusSaga";
 
@@ -36,6 +38,7 @@ const breezeActions = {
 
 export {
     Breeze,
+    breezeConstants,
     breezeActions,
     breezeReducers,
     breezeMiddlewares,

@@ -5,7 +5,7 @@ export const ORBIT_TYPE_KEYVALUE = 'keyvalue';
 export const ORBIT_TYPE_DOCS = 'docs';
 export const ORBIT_TYPE_COUNTER = 'counter';
 
-// OrbitDB statuses
+// OrbitDB Databases status
 export const DB_STATUS_INIT = 'init';
 export const DB_STATUS_READY = 'ready';
 export const DB_STATUS_REPLICATING = 'replicating';

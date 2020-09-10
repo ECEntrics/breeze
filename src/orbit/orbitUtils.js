@@ -1,4 +1,4 @@
-import * as orbitTypes from "./constants";
+import * as orbitTypes from "./orbitConstants";
 
 export function resolveOrbitDBTypeFun(orbitdb, type){
     let dbTypeFun;
