@@ -25,7 +25,6 @@ class Breeze {
         this.web3 = options.web3;
         this.ipfs = {}  // To be initialized in ipfsSaga
         this.orbit = {}  // To be initialized in orbitSaga
-        this.orbitDatabases = {};
         this.ipfsOptions = options.ipfs;
         this.orbitOptions = options.orbit;
 
