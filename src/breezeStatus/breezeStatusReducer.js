@@ -1,20 +1,33 @@
-import * as BreezeActions from './breezeActions'
+import { STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
+import { BREEZE_INITIALIZING,BREEZE_INITIALIZED,  BREEZE_FAILED } from "./breezeActions";
 
 const initialState = {
-    initialized: false
+    status: STATUS_INITIALIZING
 }
 
 const breezeStatusReducer = (state = initialState, action) => {
     /*
      * Breeze Status
      */
-    if (action.type === BreezeActions.BREEZE_INITIALIZED) {
-        return {
-            ...state,
-            initialized: true
-        }
+    switch (action.type) {
+        case BREEZE_INITIALIZING:
+            return {
+                ...state,
+                status: STATUS_INITIALIZING
+            };
+        case BREEZE_INITIALIZED:
+            return {
+                ...state,
+                status: STATUS_INITIALIZED
+            };
+        case BREEZE_FAILED:
+            return {
+                ...state,
+                status: STATUS_FAILED
+            };
+        default:
+            return state;
     }
-    return state
 }
 
 export default breezeStatusReducer

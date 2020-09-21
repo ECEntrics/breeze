@@ -6,7 +6,7 @@ import { addOrbitIdentityProvider } from '../orbit/orbitSaga';
 
 const LOGGING_PREFIX = 'breezeStatusSaga: ';
 
-export function * initializeBreeze (action) {
+function * initializeBreeze (action) {
     try {
         const { breeze } = action;
 
@@ -31,7 +31,7 @@ export function * initializeBreeze (action) {
 }
 
 function * breezeStatusSaga () {
-    yield takeLatest(BreezeActions.BREEZE_INITIALIZING, initializeBreeze)
+    yield takeLatest(BreezeActions.BREEZE_INITIALIZING, initializeBreeze);
 }
 
 export default breezeStatusSaga
