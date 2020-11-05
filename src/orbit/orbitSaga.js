@@ -11,6 +11,7 @@ import {
     ORBIT_DATABASE_READY,
     ORBIT_DATABASE_REPLICATED,
     ORBIT_DATABASE_REPLICATING,
+    ORBIT_DATABASE_WRITE,
     ORBIT_IDENTITY_PROVIDER_ADD,
     ORBIT_IDENTITY_PROVIDER_ADDED,
     ORBIT_IDENTITY_PROVIDER_FAILED,
@@ -70,7 +71,8 @@ function * initOrbit(action) {
 }
 
 /*
- * Creates an orbit database given a name and a type as its parameters
+ * Creates and loads an orbit database given a name and a type as its parameters
+ * Note: db.name can also be an OrbitDB address
  */
 function * createDatabase({ orbit, db }) {
     try {
@@ -112,16 +114,21 @@ function createOrbitDatabaseChannel (database){
         const onReplicated = () => {
             emit({ type: ORBIT_DATABASE_REPLICATED, database, timestamp: +new Date });
         };
+        const onWrite = (address, entry) => {
+            emit({ type: ORBIT_DATABASE_WRITE, database, entry, timestamp: +new Date });
+        };
 
         const eventListener = database.events
             .once('ready', onReady)
             .on('replicate', onReplicate)
             .on('replicated', onReplicated)
+            .on('write', onWrite)
 
         return () => {
             eventListener.removeListener('ready',onReady)
             eventListener.removeListener('replicate',onReplicate)
             eventListener.removeListener('replicated',onReplicated)
+            eventListener.removeListener('write',onWrite)
         };
 
     })
