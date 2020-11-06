@@ -5,7 +5,8 @@ import {
     ORBIT_DATABASE_REPLICATING,
     ORBIT_INITIALIZING,
     ORBIT_INITIALIZED,
-    ORBIT_INIT_FAILED
+    ORBIT_INIT_FAILED,
+    ORBIT_DATABASE_WRITE
 } from "./orbitActions";
 
 import {
@@ -13,6 +14,7 @@ import {
     DB_STATUS_READY,
     DB_STATUS_REPLICATED,
     DB_STATUS_REPLICATING,
+    DB_STATUS_WRITTEN
 } from "./orbitConstants";
 
 import {STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
@@ -47,24 +49,32 @@ const orbitReducer = (state = initialState, action) => {
             return newDatabasesStatus(state, action, DB_STATUS_REPLICATING);
         case ORBIT_DATABASE_REPLICATED:
             return newDatabasesStatus(state, action, DB_STATUS_REPLICATED);
+        case ORBIT_DATABASE_WRITE:
+            return newDatabasesStatus(state, action, DB_STATUS_WRITTEN);
         default:
             return state;
     }
 };
 
 function newDatabasesStatus (state, action, status) {
+    const { timestamp, database: {id} } = action;
+    // Previous values, if exist
+    const lastReplication = state.databases[id] ? state.databases[id].lastReplication : null;
+    const lastWrite = state.databases[id] ? state.databases[id].lastWrite : null;
+
     return {
         ...state,
         databases:{
             ...state.databases,
-            [action.database.id]: {
-                ...state[action.database.id],
+            [id]: {
+                ...state.databases[id],
                 status,
-                timestamp: action.timestamp
+                timestamp,
+                lastReplication: status === DB_STATUS_REPLICATED ? timestamp : lastReplication,
+                lastWrite: status === DB_STATUS_WRITTEN ? timestamp : lastWrite,
             }
         }
     }
 }
-
 
 export default orbitReducer;

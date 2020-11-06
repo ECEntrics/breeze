@@ -4,6 +4,7 @@ import OrbitDB from 'orbit-db';
 import Identities from 'orbit-db-identity-provider'
 
 import {
+    ORBIT_DATABASE_ALREADY_EXISTS,
     ORBIT_DATABASE_CREATED,
     ORBIT_DATABASE_CREATING,
     ORBIT_DATABASE_FAILED,
@@ -11,6 +12,7 @@ import {
     ORBIT_DATABASE_READY,
     ORBIT_DATABASE_REPLICATED,
     ORBIT_DATABASE_REPLICATING,
+    ORBIT_DATABASE_WRITE,
     ORBIT_IDENTITY_PROVIDER_ADD,
     ORBIT_IDENTITY_PROVIDER_ADDED,
     ORBIT_IDENTITY_PROVIDER_FAILED,
@@ -19,10 +21,7 @@ import {
     ORBIT_INITIALIZING
 } from './orbitActions';
 
-import { resolveOrbitDBTypeFun} from './orbitUtils';
-
 const LOGGING_PREFIX = 'orbitSaga: ';
-
 
 /*
  * Add Orbit Identity Provider
@@ -69,26 +68,35 @@ function * initOrbit(action) {
     }
 }
 
+// Keeps track of added databases, so no duplicates are attempted to be created
+let databases = new Set();
+
 /*
- * Creates an orbit database given a name and a type as its parameters
+ * Creates and loads an orbit database given a name and a type as its parameters
+ * Note: db.name can also be an OrbitDB address
  */
 function * createDatabase({ orbit, db }) {
     try {
-        const dbTypeFun = resolveOrbitDBTypeFun(orbit, db.type);
+        const { size } = databases;
+        databases.add(orbit.id + db.name);
 
-        const createdDB = yield call([orbit, dbTypeFun], db.name);
+        if (databases.size > size) {
+            const createdDB = yield call([orbit, orbit.open], ...[db.name, { type: db.type, create: true }]);
 
-        yield put({ type: ORBIT_DATABASE_CREATED, database: createdDB, timestamp: +new Date });
+            yield put({ type: ORBIT_DATABASE_CREATED, database: createdDB, timestamp: +new Date });
 
-        // Event channel setup
-        yield spawn(callListenForOrbitDatabaseEvent, { database: createdDB });
+            // Event channel setup
+            yield spawn(callListenForOrbitDatabaseEvent, { database: createdDB });
 
-        // Wait for event channel setup before loading
-        yield take(action => action.type === ORBIT_DATABASE_LISTEN && action.id === createdDB.id);
+            // Wait for event channel setup before loading
+            yield take(action => action.type === ORBIT_DATABASE_LISTEN && action.id === createdDB.id);
 
-        yield call([createdDB, createdDB.load]);
+            yield call([createdDB, createdDB.load]);
 
-        return createdDB;
+            return createdDB;
+        }
+        else
+            yield put({ type: ORBIT_DATABASE_ALREADY_EXISTS, database: db.name });
     } catch (error) {
         yield put({ type: ORBIT_DATABASE_FAILED, error });
         console.error(LOGGING_PREFIX + 'OrbitDB database creation error:');
@@ -112,16 +120,21 @@ function createOrbitDatabaseChannel (database){
         const onReplicated = () => {
             emit({ type: ORBIT_DATABASE_REPLICATED, database, timestamp: +new Date });
         };
+        const onWrite = (address, entry) => {
+            emit({ type: ORBIT_DATABASE_WRITE, database, entry, timestamp: +new Date });
+        };
 
         const eventListener = database.events
             .once('ready', onReady)
             .on('replicate', onReplicate)
             .on('replicated', onReplicated)
+            .on('write', onWrite)
 
         return () => {
             eventListener.removeListener('ready',onReady)
             eventListener.removeListener('replicate',onReplicate)
             eventListener.removeListener('replicated',onReplicated)
+            eventListener.removeListener('write',onWrite)
         };
 
     })
