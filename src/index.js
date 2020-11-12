@@ -12,6 +12,8 @@ import * as OrbitActions from './orbit/orbitActions'
 import * as breezeConstants from './constants'
 import * as orbitConstants from './orbit/orbitConstants'
 
+import * as orbitUtils from './orbit/orbitUtils'
+
 const breezeReducers = {
     breezeStatus: breezeStatusReducer,
     ipfs: ipfsReducer,
@@ -34,6 +36,7 @@ export {
     breezeActions,
     breezeReducers,
     breezeSagas,
-    orbitConstants
+    orbitConstants,
+    orbitUtils
 }
 

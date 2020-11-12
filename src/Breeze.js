@@ -1,20 +1,19 @@
-import { BREEZE_INITIALIZING } from './breezeStatus/breezeActions'
+import { BREEZE_INITIALIZING } from "./breezeStatus/breezeActions"
 import defaultOptions from "./misc/defaultOptions";
-import merge from './misc/mergeUtils'
-import {createOrbitDatabase, orbitInit} from "./orbit/orbitActions";
+import merge from "./misc/mergeUtils"
+import {addOrbitDB, removeOrbitDB, orbitInit} from "./orbit/orbitActions";
 
 // Load as promise so that async Breeze initialization can still resolve
 const isEnvReadyPromise = new Promise((resolve) => {
-    const hasWindow = typeof window !== 'undefined'
-    const hasDocument = typeof document !== 'undefined'
+    const hasWindow = typeof window !== 'undefined';
+    const hasDocument = typeof document !== 'undefined';
 
     if (hasWindow)
-        return window.addEventListener('load', resolve)
+        return window.addEventListener('load', resolve);
 
     // Resolve in any case if we missed the load event and the document is already loaded
-    if (hasDocument && document.readyState === `complete`) {
-        return resolve()
-    }
+    if (hasDocument && document.readyState === `complete`)
+        return resolve();
 })
 
 class Breeze {
@@ -28,9 +27,9 @@ class Breeze {
         this.ipfsOptions = options.ipfs;
         this.orbitOptions = options.orbit;
 
-        // Wait for window load event in case of injected web3.
+        // Wait for window load event
         isEnvReadyPromise.then(() => {
-            // Begin Breeze initialization.
+            // Begin Breeze initialization
             this.store.dispatch({
                 type: BREEZE_INITIALIZING,
                 breeze: this
@@ -39,12 +38,17 @@ class Breeze {
     }
 
     initOrbit(id) {
-        this.store.dispatch(orbitInit (this, id));
+        this.store.dispatch(orbitInit(this, id));
     }
 
-    // db = {name, type}
-    createOrbitDatabase (db){
-        this.store.dispatch(createOrbitDatabase (this.orbit, db));
+    // dbInfo = {address, type}    (where address can also be a name)
+    addOrbitDB (dbInfo){
+        this.store.dispatch(addOrbitDB(dbInfo));
+    }
+
+    // dbInfo = {address[, type]}    (where address can also be a name, in which case type must be supplied)
+    removeOrbitDB (dbInfo){
+        this.store.dispatch(removeOrbitDB(dbInfo));
     }
 }
 
