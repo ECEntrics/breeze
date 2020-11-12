@@ -11,9 +11,12 @@ export const ORBIT_IDENTITY_PROVIDER_FAILED = 'ORBIT_IDENTITY_PROVIDER_FAILED';
 // Database Status
 export const ORBIT_DB_ADD = 'ORBIT_DB_ADD';
 export const ORBIT_DB_ADDED = 'ORBIT_DB_ADDED';
+export const ORBIT_DB_REMOVE = 'ORBIT_DB_REMOVE';
+export const ORBIT_DB_REMOVED = 'ORBIT_DB_REMOVED';
 export const ORBIT_DB_ALREADY_ADDED = 'ORBIT_DB_ALREADY_ADDED';
-export const ORBIT_DB_FAILED = 'ORBIT_DB_FAILED';
+export const ORBIT_DB_ALREADY_REMOVED = 'ORBIT_DB_ALREADY_REMOVED';
 export const ORBIT_DB_LISTEN = 'ORBIT_DB_LISTEN';
+export const ORBIT_DB_ERROR = 'ORBIT_DB_ERROR';
 
 // Database Events
 export const ORBIT_DB_READY = 'ORBIT_DB_READY';
@@ -33,6 +36,14 @@ export function orbitInit (breeze, id) {
 export function addOrbitDB (dbInfo) {
     return {
         type: ORBIT_DB_ADD,
+        dbInfo
+    }
+}
+
+// dbInfo = {address, type}    (where address can also be a name)
+export function removeOrbitDB (dbInfo) {
+    return {
+        type: ORBIT_DB_REMOVE,
         dbInfo
     }
 }

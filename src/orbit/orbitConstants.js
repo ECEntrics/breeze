@@ -4,3 +4,4 @@ export const DB_STATUS_READY = 'ready';
 export const DB_STATUS_REPLICATING = 'replicating';
 export const DB_STATUS_REPLICATED = 'replicated';
 export const DB_STATUS_WRITTEN = 'written';
+export const DB_STATUS_REMOVED = 'removed';

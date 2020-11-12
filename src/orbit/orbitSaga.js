@@ -6,9 +6,12 @@ import Identities from 'orbit-db-identity-provider'
 import {
     ORBIT_DB_ADDED,
     ORBIT_DB_ADD,
-    ORBIT_DB_FAILED,
+    ORBIT_DB_ALREADY_ADDED,
+    ORBIT_DB_ERROR,
     ORBIT_DB_LISTEN,
     ORBIT_DB_READY,
+    ORBIT_DB_REMOVE,
+    ORBIT_DB_REMOVED,
     ORBIT_DB_REPLICATED,
     ORBIT_DB_REPLICATING,
     ORBIT_DB_WRITE,
@@ -17,8 +20,10 @@ import {
     ORBIT_IDENTITY_PROVIDER_FAILED,
     ORBIT_INIT_FAILED,
     ORBIT_INITIALIZED,
-    ORBIT_INITIALIZING, ORBIT_DB_ALREADY_ADDED
+    ORBIT_INITIALIZING, ORBIT_DB_ALREADY_REMOVED,
 } from './orbitActions';
+
+import { determineDBAddress }from "./orbitUtils";
 
 const LOGGING_PREFIX = 'orbitSaga: ';
 
@@ -73,7 +78,8 @@ function * initOrbit(action) {
 let databases = new Set();
 
 /*
- * Adds an Orbit database to the set of the tracked databases. The database is created and loaded, with an event channel
+ * Adds an Orbit database to the set of the tracked databases.
+ * The database is created and loaded, with an event channel
  * that listens to emitted events and dispatches corresponding actions.
  * dbInfo = {address, type}    (where address can also be a name)
  */
@@ -81,7 +87,7 @@ function * addDatabase({dbInfo}) {
     try {
         let {address, type} = dbInfo;
         if(!OrbitDB.isValidAddress(address))
-            address = yield call([orbit, orbit.determineAddress],...[address, type]);
+            address = yield call(determineDBAddress,{orbit, name: address, type});
 
         const { size } = databases;
         databases.add(address);
@@ -104,8 +110,38 @@ function * addDatabase({dbInfo}) {
         else
             yield put({ type: ORBIT_DB_ALREADY_ADDED, address });
     } catch (error) {
-        yield put({ type: ORBIT_DB_FAILED, error });
-        console.error(LOGGING_PREFIX + 'OrbitDB database creation error:');
+        yield put({ type: ORBIT_DB_ERROR, error });
+        console.error(LOGGING_PREFIX + 'OrbitDB database adding error:');
+        console.error(error);
+    }
+}
+
+/*
+ * Removes an Orbit database from the set of the tracked databases.
+ * The database is closed.
+ * dbInfo = {address[, type]}    (where address can also be a name, in which case type must be supplied)
+ */
+function * removeDatabase({dbInfo}) {
+    try {
+        let {address, type} = dbInfo;
+        if(!OrbitDB.isValidAddress(address))
+            address = yield call(determineDBAddress,{orbit, name: address, type});
+
+        const store = orbit.stores[address];
+
+        if(databases.has(address)) {
+            databases.delete(address);
+
+            if(store){
+                yield call([store, store.close]);
+                yield put({ type: ORBIT_DB_REMOVED, address });
+                return;
+            }
+        }
+        yield put({ type: ORBIT_DB_ALREADY_REMOVED, address }); //or never existed
+    } catch (error) {
+        yield put({ type: ORBIT_DB_ERROR, error });
+        console.error(LOGGING_PREFIX + 'OrbitDB database removing error:');
         console.error(error);
     }
 }
@@ -162,6 +198,7 @@ function * callListenForOrbitDatabaseEvent ({ database }) {
 function * orbitSaga () {
     yield takeLatest(ORBIT_INITIALIZING, initOrbit);
     yield takeEvery(ORBIT_DB_ADD, addDatabase);
+    yield takeEvery(ORBIT_DB_REMOVE, removeDatabase);
 }
 
 export default orbitSaga
