@@ -9,17 +9,17 @@ export const ORBIT_IDENTITY_PROVIDER_ADDED = 'ORBIT_IDENTITY_PROVIDER_ADDED';
 export const ORBIT_IDENTITY_PROVIDER_FAILED = 'ORBIT_IDENTITY_PROVIDER_FAILED';
 
 // Database Status
-export const ORBIT_DATABASE_CREATING = 'ORBIT_DATABASE_CREATING';
-export const ORBIT_DATABASE_CREATED = 'ORBIT_DATABASE_CREATED';
-export const ORBIT_DATABASE_ALREADY_EXISTS = 'ORBIT_DATABASE_ALREADY_EXISTS';
-export const ORBIT_DATABASE_FAILED = 'ORBIT_DATABASE_FAILED';
-export const ORBIT_DATABASE_LISTEN = 'ORBIT_DATABASE_LISTEN';
+export const ORBIT_DB_ADD = 'ORBIT_DB_ADD';
+export const ORBIT_DB_ADDED = 'ORBIT_DB_ADDED';
+export const ORBIT_DB_ALREADY_ADDED = 'ORBIT_DB_ALREADY_ADDED';
+export const ORBIT_DB_FAILED = 'ORBIT_DB_FAILED';
+export const ORBIT_DB_LISTEN = 'ORBIT_DB_LISTEN';
 
 // Database Events
-export const ORBIT_DATABASE_READY = 'ORBIT_DATABASE_READY';
-export const ORBIT_DATABASE_REPLICATING = 'ORBIT_DATABASE_REPLICATING';
-export const ORBIT_DATABASE_REPLICATED = 'ORBIT_DATABASE_REPLICATED';
-export const ORBIT_DATABASE_WRITE = 'ORBIT_DATABASE_WRITE';
+export const ORBIT_DB_READY = 'ORBIT_DB_READY';
+export const ORBIT_DB_REPLICATING = 'ORBIT_DB_REPLICATING';
+export const ORBIT_DB_REPLICATED = 'ORBIT_DB_REPLICATED';
+export const ORBIT_DB_WRITE = 'ORBIT_DB_WRITE';
 
 export function orbitInit (breeze, id) {
     return {
@@ -29,11 +29,11 @@ export function orbitInit (breeze, id) {
     }
 }
 
-export function createOrbitDatabase (orbit, db) {
+// dbInfo = {address, type}    (where address can also be a name)
+export function addOrbitDB (dbInfo) {
     return {
-        type: ORBIT_DATABASE_CREATING,
-        orbit,
-        db
+        type: ORBIT_DB_ADD,
+        dbInfo
     }
 }
 

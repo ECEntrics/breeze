@@ -1,12 +1,12 @@
 import {
-    ORBIT_DATABASE_CREATED,
-    ORBIT_DATABASE_READY,
-    ORBIT_DATABASE_REPLICATED,
-    ORBIT_DATABASE_REPLICATING,
+    ORBIT_DB_ADDED,
+    ORBIT_DB_READY,
+    ORBIT_DB_REPLICATED,
+    ORBIT_DB_REPLICATING,
     ORBIT_INITIALIZING,
     ORBIT_INITIALIZED,
     ORBIT_INIT_FAILED,
-    ORBIT_DATABASE_WRITE
+    ORBIT_DB_WRITE
 } from "./orbitActions";
 
 import {
@@ -41,15 +41,15 @@ const orbitReducer = (state = initialState, action) => {
                 ...state,
                 status: STATUS_FAILED
             };
-        case ORBIT_DATABASE_CREATED:
+        case ORBIT_DB_ADDED:
             return newDatabasesStatus(state, action, DB_STATUS_INIT);
-        case ORBIT_DATABASE_READY:
+        case ORBIT_DB_READY:
             return newDatabasesStatus(state, action, DB_STATUS_READY);
-        case ORBIT_DATABASE_REPLICATING:
+        case ORBIT_DB_REPLICATING:
             return newDatabasesStatus(state, action, DB_STATUS_REPLICATING);
-        case ORBIT_DATABASE_REPLICATED:
+        case ORBIT_DB_REPLICATED:
             return newDatabasesStatus(state, action, DB_STATUS_REPLICATED);
-        case ORBIT_DATABASE_WRITE:
+        case ORBIT_DB_WRITE:
             return newDatabasesStatus(state, action, DB_STATUS_WRITTEN);
         default:
             return state;
