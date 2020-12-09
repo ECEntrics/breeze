@@ -1,8 +1,8 @@
 import { IPFS_INITIALIZING , IPFS_INITIALIZED, IPFS_FAILED } from "./ipfsActions";
-import { STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
+import { STATUS_UNINITIALIZED, STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
 
 const initialState = {
-    status: STATUS_INITIALIZING
+    status: STATUS_UNINITIALIZED
 };
 
 const ipfsReducer = (state = initialState, action) => {

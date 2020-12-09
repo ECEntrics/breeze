@@ -7,6 +7,7 @@ import breezeStatusSaga from './breezeStatus/breezeStatusSaga';
 import orbitSaga from "./orbit/orbitSaga";
 
 import * as BreezeActions from './breezeStatus/breezeActions'
+import * as IpfsActions from './ipfs/ipfsActions'
 import * as OrbitActions from './orbit/orbitActions'
 
 import * as breezeConstants from './constants'
@@ -27,7 +28,8 @@ const breezeSagas = [
 
 const breezeActions = {
     breeze: BreezeActions,
-    orbit: OrbitActions
+    orbit: OrbitActions,
+    ipfs: IpfsActions
 }
 
 export {

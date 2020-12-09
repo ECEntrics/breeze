@@ -1,8 +1,8 @@
-import { STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
+import { STATUS_UNINITIALIZED, STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
 import { BREEZE_INITIALIZING,BREEZE_INITIALIZED,  BREEZE_FAILED } from "./breezeActions";
 
 const initialState = {
-    status: STATUS_INITIALIZING
+    status: STATUS_UNINITIALIZED
 }
 
 const breezeStatusReducer = (state = initialState, action) => {
