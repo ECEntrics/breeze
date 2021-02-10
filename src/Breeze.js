@@ -2,6 +2,7 @@ import { BREEZE_INITIALIZING } from "./breezeStatus/breezeActions"
 import defaultOptions from "./misc/defaultOptions";
 import merge from "./misc/mergeUtils"
 import {addOrbitDB, removeOrbitDB, orbitInit} from "./orbit/orbitActions";
+import {STATUS_INITIALIZED} from "./constants";
 
 // Load as promise so that async Breeze initialization can still resolve
 const isEnvReadyPromise = new Promise((resolve) => {
@@ -37,8 +38,20 @@ class Breeze {
         })
     }
 
-    initOrbit(id) {
-        this.store.dispatch(orbitInit(this, id));
+    async initOrbit(id) {
+        const { store, orbit } = this;
+        store.dispatch(orbitInit(this, id));
+
+        return new Promise(resolve => {
+            const unsubscribe = store.subscribe(() => {
+                const status = store.getState().orbit.status;
+
+                if (status === STATUS_INITIALIZED) {
+                    unsubscribe();
+                    return resolve(orbit);
+                }
+            })
+        });
     }
 
     // dbInfo = {address, type}    (where address can also be a name)

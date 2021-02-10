@@ -19,10 +19,10 @@ import {
     DB_STATUS_REMOVED
 } from "./orbitConstants";
 
-import {STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
+import { STATUS_UNINITIALIZED, STATUS_INITIALIZING, STATUS_INITIALIZED, STATUS_FAILED } from "../constants";
 
 const initialState = {
-    status: STATUS_INITIALIZING,
+    status: STATUS_UNINITIALIZED,
     databases: {}
 };
 

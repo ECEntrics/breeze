@@ -15,7 +15,7 @@ export function * initializeIPFS (ipfsOptions) {
         // Initialize IPFS
         const ipfs = yield call(IPFS.create, ipfsOptions);
 
-        yield put({ type: IpfsActions.IPFS_INITIALIZED });
+        yield put({ type: IpfsActions.IPFS_INITIALIZED, ipfs });
 
         return ipfs;
     } catch (error) {

@@ -133,6 +133,10 @@ function * removeDatabase({dbInfo}) {
             databases.delete(address);
 
             if(store){
+                const { eventChannel } = store;
+                if(eventChannel)
+                    eventChannel.close();
+
                 yield call([store, store.close]);
                 yield put({ type: ORBIT_DB_REMOVED, address });
                 return;
@@ -183,6 +187,8 @@ function createOrbitDatabaseChannel (database){
 
 function * callListenForOrbitDatabaseEvent ({ database }) {
     const orbitDatabaseChannel = yield call(createOrbitDatabaseChannel, database);
+    database.eventChannel = orbitDatabaseChannel;
+
     yield put({type: ORBIT_DB_LISTEN, id: database.id});
 
     try {
