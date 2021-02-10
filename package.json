@@ -1,6 +1,6 @@
 {
   "name": "@ezerous/breeze",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A reactive data-store for OrbitDB.",
   "license": "MIT",
   "author": "Ezerous <ezerous@gmail.com>",
