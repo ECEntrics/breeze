@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Ezerous <ezerous@gmail.com>",
   "main": "src/index.js",
-  "repository": "github:Ezerous/breeze",
+  "repository": "gitlab:ECEntrics/breeze",
   "dependencies": {
     "deepmerge": "~4.2.2",
     "ipfs": "~0.54.2",
